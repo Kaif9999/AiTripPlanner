@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
+ 
+
 import { db } from '@/service/FirebaseConfig';
 import { doc, getDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'
@@ -21,24 +21,23 @@ function Index() {
 
   //we have call call GetTripData inside useEffect so that whenevr id will change this will run
   useEffect(()=>{
-       tripId&&GetTripData();
+    const GetTripData=async ()=>{
+      const docRef=doc(db,'AITrips',tripId);
+      const docSnap=await getDoc(docRef);
+
+      if(docSnap.exists()){
+        console.log("Document data:", docSnap.data());
+        setTrip(docSnap.data());
+      }
+      else{
+        console.log("No such document");
+        toast("No such document found");
+      }
+    }
+    if (tripId) {
+      GetTripData();
+    }
   },[tripId])
-
-
-  //now we have fetch data from the firbase for corrospoding tripId
-  const GetTripData=async ()=>{
-    const docRef=doc(db,'AITrips',tripId);
-    const docSnap=await getDoc(docRef);
-
-    if(docSnap.exists()){
-      console.log("Document data:", docSnap.data());
-      setTrip(docSnap.data());
-    }
-    else{
-      console.log("No such document");
-      toast("No such document found");
-    }
-  }
 
   return (
     <div className='p-10 md:px-20 lg:px-44 xl:px-56 gap-10'>

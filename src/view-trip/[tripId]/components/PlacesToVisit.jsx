@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
+ 
 /* eslint-disable react/prop-types */
-/* eslint-disable react/jsx-key */
+ 
 import React from 'react'
 import PlaceCardItem from './PlaceCardItem'
 

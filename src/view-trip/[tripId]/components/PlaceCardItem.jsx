@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Button } from '@/components/ui/button'
 import React from 'react'
-import { FaMapLocation } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
 

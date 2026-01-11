@@ -1,6 +1,6 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable no-unused-vars */
+ 
+ 
+ 
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { Link } from 'react-router-dom'

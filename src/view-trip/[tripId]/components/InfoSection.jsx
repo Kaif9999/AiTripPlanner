@@ -1,9 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Button } from '@/components/ui/button'
-import { GetPlaceDetails } from '@/service/GlobalApi';
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FaShare } from "react-icons/fa6";
 
 

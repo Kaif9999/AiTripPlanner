@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
+ 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { AI_PROMPT, SelectBudgetOptions, SelectTravelesList } from '@/constants/Options';
 import { chatSession } from '@/service/AIModal';
-import React, { useEffect, useState } from 'react'
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 // for dialog box
 import {
@@ -13,7 +12,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 // for google icon
 import { FcGoogle } from "react-icons/fc";
@@ -28,8 +26,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 function CreateTrip() {
-
-  const [place, setplace] = useState();
 
   // sara data is use from usestate mai store krenge
   const [formData, setformData] = useState([])
@@ -46,11 +42,10 @@ function CreateTrip() {
   
 
   const handleInputChange=(name,value)=>{
-    const updatedValue = name === 'noOfdays' ? Number(value) : value;
     setformData({...formData,
       [name]:value
     })
-  } 
+  }
 
 
   const OnGenerateTrip = async () => {
@@ -134,7 +129,7 @@ function CreateTrip() {
     } catch (error) {
       console.error('Error parsing Trip_Details:', error.message);
       toast.error('Failed to parse trip details. Please try again.');
-      // eslint-disable-next-line no-undef
+       
       setloading(false);
       return;
     }
@@ -162,7 +157,7 @@ function CreateTrip() {
 
         <div>
           <h2 className='text-xl my-3 font-medium'>What is destination of your choice✈️ ?</h2>
-          <Input placeholder={'Ex. Mumbai,India'} type='text' onChange={(v)=>{setplace(v);handleInputChange('location',v.target.value)}} />
+          <Input placeholder={'Ex. Mumbai,India'} type='text' onChange={(v)=>{handleInputChange('location',v.target.value)}} />
         </div>
 
 

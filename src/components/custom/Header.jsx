@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
+ 
+ 
+ 
 import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import ThemeToggle from '../ui/ThemeToggle';
@@ -11,7 +11,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { googleLogout, useGoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
 // for dialog box
 import {
   Dialog,
@@ -19,7 +18,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
@@ -31,7 +29,7 @@ function Header() {
 
   useEffect(() => {
     console.log(user);
-  }, []);
+  }, [user]);
 
   const [openDialog, setopenDialog] = useState(false);
 

@@ -1,12 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
+ 
 import React from 'react'
 import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
-import { useTheme } from '../../contexts/ThemeContext' // Adjust the import path as needed
 
 function Hero() {
-  const { isDarkMode } = useTheme();
 
   return (
     <div className='flex flex-col items-center mx-auto max-w-4xl px-4 gap-9 transition-colors duration-300' style={{ color: 'var(--text-primary)' }}>
